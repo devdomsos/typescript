@@ -89,3 +89,20 @@ const array7: number[] = [1,2,6,8,10,50];
 
 const array8: boolean = array7.some((e) => e > 10);
 console.log("Does Array contain element greater than 10?", array8)
+
+
+const list = [15, 6, 3213, 9, 0, 12, 8464 , 1, 1264, 481, 186, 1031, 194];
+
+const sortedList = list.sort( (a, b) => b - a);
+console.log("Sorted List In Descending Order", sortedList)
+const squaredNumbers = sortedList.map( e => e * e)
+console.log("Squared Numbers", squaredNumbers)
+// Remove the lowest two numbers and the highest 4 numbers from the list.
+console.log("Length of Array to slice", squaredNumbers.length)
+// We want to remove 4 elements of 13 = 4 first argument. And 13 - 2 = 2nd argument.
+const trimmedList = squaredNumbers.slice(4, 11);
+console.log("Trimmed List ", trimmedList)
+const filteredArray = trimmedList.filter(e => e % 4 !== 0);
+console.log("filteredArray List ", filteredArray)
+const reducedArray = filteredArray.reduce( (prev, curr) => prev + curr, 0);
+console.log("ReducedArray List ", reducedArray)
