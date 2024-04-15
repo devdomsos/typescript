@@ -41,3 +41,16 @@ if (!userName) {
     console.log("Username is available")
 }
 
+// Step 10: Declare a variable named 'isAdmin' of type 'boolean' and assign it the value 'false'.
+const isAdmin: boolean = false;
+
+if (isAdmin) {
+    // Step 11: Use an 'if-else' statement to check if 'isAdmin' is evaluated as a 'truthy' value.
+    //     Display 'isAdmin is evaluated as truthy.' if 'isAdmin' is considered 'truthy'.
+
+    console.log("isAdmin is evaluated as truthy.")
+} else {
+    // Step 8: Use an 'if' statement to check if 'username' has a value.
+    //     Display 'Username is available.' if 'username' has a value.
+    console.log("isAdmin is false.")
+}
