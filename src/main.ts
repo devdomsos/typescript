@@ -1,3 +1,7 @@
+
+// ===================================== PART 1  =====================================
+
+
 const age: number = 55;
 
 for (let i = 0; i <= age; i++) {
@@ -54,3 +58,34 @@ if (isAdmin) {
     //     Display 'Username is available.' if 'username' has a value.
     console.log("isAdmin is false.")
 }
+
+
+// ===================================== PART 2  =====================================
+
+// Step 1: Create an array of numbers. Use the '.map' function to double all the numbers in the array.
+
+const array1: number[] = [1,2,6,8,10,50];
+
+const array2 = array1.map(e => e * 2);
+console.log("Array of doubled numbers", array2)
+
+// Step 2: Create an array of words. Use the '.filter' function to select only the words that are longer than 5 letters.
+
+const array3: string[] = ["Hell","AquaMan","Circus","Equalizer3"];
+
+const array4 = array3.filter(e => e.length > 5)
+console.log("Array of filtered words", array4)
+
+// Step 3: Create an array of numbers. Use the '.reduce' function to calculate the sum of all the numbers in the array.
+const array5: number[] = [1,2,6,8,10,50];
+
+const array6: number = array5.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+console.log("Reduced Array of numbers", array6)
+
+/*
+Step 4: Create an array of numbers. Use the '.some' function to check if at least one number is greater than 10.
+*/
+const array7: number[] = [1,2,6,8,10,50];
+
+const array8: boolean = array7.some((e) => e > 10);
+console.log("Does Array contain element greater than 10?", array8)
