@@ -106,3 +106,69 @@ const filteredArray = trimmedList.filter(e => e % 4 !== 0);
 console.log("filteredArray List ", filteredArray)
 const reducedArray = filteredArray.reduce( (prev, curr) => prev + curr, 0);
 console.log("ReducedArray List ", reducedArray)
+
+
+// ===================================== PART 3  =====================================
+// ================================ TypeScript Types =====================================
+
+type Grade = GradeGermanSystemNumbers | GradeGermanSystemStrings | GradeAmericanSystemStrings | UndefinedGrade;
+type GradeGermanSystemNumbers = 1 | 2 | 3 | 4 | 5 | 6;
+type GradeGermanSystemStrings = "1" | "2" | "3" | "4" | "5" | "6";
+type GradeAmericanSystemStrings = "A" | "B" | "C" | "D" | "E" | "F";
+type UndefinedGrade = undefined | "*"
+type Student = {
+    firstName: string;
+    lastName: string;
+    age: number;
+    grades?: Grade[]
+}
+
+const printStudent = (student: Student): Student => {
+    const {firstName, lastName, age, grades} = student
+
+    const fullName = `${firstName} ${lastName} (${age})`;
+    const printAsterixForMissingGrades = grades.map((grade: Grade) => {
+        if (!grade) {
+            return "*"
+        }
+        return grade;
+    })
+    const gradeString = printAsterixForMissingGrades.join(',')
+    console.log(fullName);
+    console.log('==============================');
+    console.log(`Grades: ${gradeString}`);
+
+    return {
+        firstName,
+        lastName,
+        age,
+        grades
+    }
+}
+
+const student1: Student = {
+    firstName: 'Anton',
+    lastName: 'Meier',
+    age: 17,
+    grades: [1, "F", undefined, 1, 3, "B", 1, 2]
+}
+
+const student2: Student ={
+    firstName: "Berta",
+    lastName: "Müller",
+    age: 17,
+    grades: ["A", "*", "1"]
+}
+
+const student3: Student = {
+    firstName: "Cäsar",
+    lastName: "Schmidt",
+    age: 17,
+    grades: ["A", "1", "*", "3", "2", "4", "5"]
+}
+console.log("")
+printStudent(student1)
+console.log("")
+printStudent(student2)
+console.log("")
+printStudent(student3)
